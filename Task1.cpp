@@ -1,19 +1,27 @@
 #include <iostream>
 using namespace std;
 
+int factorial(int number) {
+	if (number == 0 || number == 1) return 1;
+	else if (number < 0) return 0;
+	return number * factorial(number - 1);
+}
+
 int main() {
 	system("chcp 1251>null");
-	int a{}, b{}, product{};
+	
+	int number{}, arr[10];
 
-	cout << "Введите первое число: ";//вывод сообщения
-	cin >> a;
+	for (int i{}; i <= 10; i++) {
+		cout << i << endl;
+	}
 
-	cout << "Введите второе число: ";
-	cin >> b;
+	cout << "\nФакториал числа: ";
+	cin >> number;
 
-	product = a * b;
-
-	cout << "Произведение двух чисел равно: " << product;
+	int factor = factorial(number);
+	if (factor > 0) cout << "\nФакториал числа " << number << " равен: " << factor;
+	else cout << "Такого факториала нет";
 
 	return 0;
 }
