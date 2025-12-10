@@ -1,27 +1,30 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-int factorial(int number) {
-	if (number == 0 || number == 1) return 1;
-	else if (number < 0) return 0;
-	return number * factorial(number - 1);
+/// <summary>
+/// Вычисляет периметр ромба
+/// </summary>
+/// <param name="a">Длина одной стороны ромба</param>
+/// <returns>Периметр ромба</returns>
+/// <remarks>Если сторона ромба меньше или равна нулю, функция возвращает -1</remarks>
+double calculatePerimeterOfRhomb(double a) {
+    
+    if (a <= 0) return -1; // +1 к n2; + 1 к n1 
+
+    return a *= 4; // +1 к n1
 }
 
-int main() {
-	system("chcp 1251>null");
-	
-	int number{}, arr[10];
+int main()
+{
+    system("chcp 1251>null");
 
-	for (int i{}; i <= 10; i++) {
-		cout << i << endl;
-	}
+    double a{};
 
-	cout << "\nФакториал числа: ";
-	cin >> number;
+    cout << "Введите длину стороны: ";
+    cin >> a;
 
-	int factor = factorial(number);
-	if (factor > 0) cout << "\nФакториал числа " << number << " равен: " << factor;
-	else cout << "Такого факториала нет";
+    cout << "Периметр ромба равен: " << calculatePerimeterOfRhomb(a);
 
-	return 0;
+    return 0;
 }
